@@ -1,26 +1,30 @@
 import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
-import Error from './Pages/Error';
-import Products from './Pages/Products';
-import Pricing from './Pages/Pricing';
 import AppLayout from './Pages/AppLayout';
+import PageNotFound from './Pages/PageNotFound';
+import Homepage from './Pages/Homepage';
+import Product from './Pages/Product';
+import Pricing from './Pages/Pricing';
+import Login from './Pages/Login';
 
 const route = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: 'products',
-        element: <Products />,
-      },
-      {
-        path: 'pricing',
-        element: <Pricing />,
-      },
-    ],
+    element: <Homepage />,
+    errorElement: <PageNotFound />,
+    children: [],
+  },
+  {
+    path: 'product',
+    element: <Product />,
+  },
+  {
+    path: 'pricing',
+    element: <Pricing />,
+  },
+  {
+    path: 'login',
+    element: <Login />,
   },
   {
     path: 'App',
