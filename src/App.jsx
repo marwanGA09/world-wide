@@ -6,6 +6,7 @@ import Homepage from './Pages/Homepage';
 import Product from './Pages/Product';
 import Pricing from './Pages/Pricing';
 import Login from './Pages/Login';
+import City from './Component/City';
 
 const route = createBrowserRouter([
   {
@@ -29,6 +30,21 @@ const route = createBrowserRouter([
   {
     path: 'App',
     element: <AppLayout />,
+    children: [
+      { index: true, element: <div>Default</div> },
+      {
+        path: 'cities',
+        element: <div>HElle citty</div>,
+      },
+      {
+        path: 'countries',
+        element: <div>HElle countries</div>,
+      },
+      {
+        path: 'form',
+        element: <div>HElle form</div>,
+      },
+    ],
   },
 ]);
 
